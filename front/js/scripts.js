@@ -6,4 +6,5 @@ async function obterFilmes(){
     // console.log("Tá fununsando meu querido")
     const URLcompleta = `${protocolo}${baseURL}${filmesEndPoint}`;
     const filmes = (await axios.get(URLcompleta)).data;
+    console.log(filmes);
 }
