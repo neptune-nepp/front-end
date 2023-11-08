@@ -17,7 +17,7 @@ const usuarioSchema = mongoose.Schema({
 })
 usuarioSchema.plugin(uniqueValidator);
 
-const usuario = mongoose.model("Usuário", usuarioSchema);
+const Usuario = mongoose.model("Usuario", usuarioSchema);
 
 async function conectarMongo() {
     await mongoose.connect (`mongodb+srv://belavezzu:netuno21@cluster0.gtf9lcp.mongodb.net/?retryWrites=true&w=majority`)
