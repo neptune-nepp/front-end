@@ -6,7 +6,6 @@ const express = require ('express')
 const cors = require('cors');
 const mongoose = require('mongoose');
 const app = express()
-
 app.use(express.json())
 app.use(cors())
 
@@ -31,8 +30,9 @@ let filmes = [
 ]
 
 //GET http://localhost:3000/filmes
-app.get('/filmes', (req, res) => {
-res.json(filmes)
+app.get('/filmes', async (req, res) => {
+    const filmes = await Filme.find(); //find é um método de classe
+    res.json(filmes);
 })
 
 // ponto de acesso para inserir um novo filme EEEEEM MEMORIAAAA
